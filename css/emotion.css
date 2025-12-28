@@ -1,0 +1,399 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.emotion-page {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #e7f6c3;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.emotion-container {
+    min-height: 100vh;
+    max-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.nav-container {
+    position: absolute;
+    top: 14px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 35px;
+    z-index: 100;
+}
+
+.nav-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    color: #000;
+    transition: opacity 0.3s ease;
+}
+
+.nav-button:hover {
+    opacity: 0.8;
+}
+
+.nav-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.emotion-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 80px 140px;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+}
+
+.emotion-left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-top: 40px;
+    flex: 1;
+    min-width: 0;
+}
+
+.emotion-title-card {
+    background: #fef0cb;
+    border: 3px solid #ffe592;
+    border-radius: 20px;
+    padding: 10px 60px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.alegria-card {
+    background: #fef0cb;
+    border-color: #ffe592;
+}
+
+.tristeza-card {
+    background: #ddf0ff;
+    border-color: #abd5f8;
+}
+
+.medo-card {
+    background: #ebe2ff;
+    border-color: #d2b2d7;
+}
+
+.raiva-card {
+    background: #ffe2df;
+    border-color: #edb2b1;
+}
+
+.amor-card {
+    background: #ffe4f7;
+    border-color: #e5abbe;
+}
+
+.calma-card {
+    background: #d6f2da;
+    border-color: #a1cca3;
+}
+
+.emotion-name {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 42px;
+    color: #000;
+    text-align: center;
+    margin: 0;
+}
+
+.emotion-flower-container {
+    width: 100%;
+    max-width: 900px;
+    height: 650px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.emotion-flower-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+.vertical-divider {
+    width: 3px;
+    height: 550px;
+    top: 30%;
+    background: linear-gradient(to bottom, 
+        rgba(128, 187, 157, 0) 0%,
+        rgba(128, 187, 157, 0.6) 10%,
+        rgba(128, 187, 157, 0.6) 90%,
+        rgba(128, 187, 157, 0) 100%
+    );
+    align-self: center;
+    flex-shrink: 0;
+}
+
+.emotion-right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0;
+    flex: 1;
+    min-width: 0;
+}
+
+.logo {
+    width: 95px;
+    height: 95px;
+    position: absolute;
+    left: 50%;
+    top: 70px;
+    transform: translateX(-50%);
+    z-index: 10;
+    background-color: #e7f6c3;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.brain-flower-icon {
+    width: 115px;
+    height: 115px;
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    transform: translateX(-50%);
+    z-index: 10;
+    background-color: #e7f6c3;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.brain-flower-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.text-section {
+    margin-bottom: 25px;
+}
+
+.section-title {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: #ff9301;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+body:has(.alegria-card) .section-title {
+    color: #ff9301; 
+}
+
+body:has(.tristeza-card) .section-title {
+    color: #1099CB; 
+}
+
+body:has(.medo-card) .section-title {
+    color: #964EC3; 
+}
+
+body:has(.raiva-card) .section-title {
+    color: #EF3F46; 
+}
+
+body:has(.amor-card) .section-title {
+    color: #F37792; 
+}
+
+body:has(.calma-card) .section-title {
+    color: #469C17; 
+}
+
+.section-text {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #000;
+    text-align: center;
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+.grass-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 140px;
+    line-height: 0;
+    pointer-events: none;
+}
+
+.grass {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1366px) {
+    .emotion-wrapper {
+        padding: 50px 40px 140px;
+        gap: 40px;
+    }
+
+    .emotion-left-section {
+        padding-top: 30px;
+    }
+
+    .emotion-name {
+        font-size: 38px;
+    }
+
+    .vertical-divider {
+    width: 3px;
+    height: 450px;
+    top: 30%;
+    }
+
+    .emotion-flower-container {
+        max-width: 500px;
+        height: 400px;
+    }
+
+    .emotion-flower-img {
+    width: 600px;
+    height: 570px;
+    }
+
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .section-text {
+        font-size: 18px;
+    }
+
+    .brain-flower-icon,
+    .logo {
+        width: 100px;
+        height: 100px;
+        top: 50px;
+    }
+}
+
+/* Tablets */
+@media screen and (max-width: 1200px) {
+    .emotion-wrapper {
+        padding: 50px 30px 130px;
+        gap: 30px;
+    }
+
+    .emotion-flower-container {
+        max-width: 400px;
+        height: 550px;
+    }
+
+    .vertical-divider {
+    width: 3px;
+    height: 450px;
+    top: 30%;
+    }
+
+    .emotion-name {
+        font-size: 36px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .section-text {
+        font-size: 17px;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    .nav-container {
+        padding: 0 20px;
+    }
+
+    .nav-button {
+        font-size: 20px;
+    }
+
+    .nav-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .emotion-wrapper {
+        padding: 80px 20px 180px;
+    }
+
+    .emotion-title-card {
+        padding: 15px 40px;
+    }
+
+    .emotion-name {
+        font-size: 45px;
+    }
+
+    .emotion-flower-container {
+        width: 300px;
+        height: 450px;
+    }
+
+    .brain-flower-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 30px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .section-text {
+        font-size: 22px;
+    }
+
+    .text-section {
+        margin-bottom: 35px;
+    }
+}

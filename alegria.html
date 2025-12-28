@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alegria - The Sentimental Garden</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/emotion.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="emotion-page">
+    <div class="emotion-container">
+        <!-- Botões de Navegação no Topo -->
+        <div class="nav-container">
+            <a href="index.html" class="nav-button nav-back">
+                <svg class="nav-icon" viewBox="0 0 40 40">
+                    <circle cx="20" cy="20" r="19" fill="#4CAF50"/>
+                    <path d="M25 12 L15 20 L25 28" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Voltar atrás</span>
+            </a>
+            
+            <a href="tristeza.html" class="nav-button nav-next">
+                <span>Próxima emoção</span>
+                <svg class="nav-icon" viewBox="0 0 40 40">
+                    <circle cx="20" cy="20" r="19" fill="#4CAF50"/>
+                    <path d="M15 12 L25 20 L15 28" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div class="emotion-wrapper">
+            <!-- Logo Centralizado sobre a Linha -->
+            <div class="brain-flower-icon">
+                <a href="index.html" alt="Cérebro e Flor">
+                    <img src="assets/img/logo.svg" alt="Cérebro e Flor">
+                </a>
+            </div>
+
+            <!-- Lado Esquerdo -->
+            <div class="emotion-left-section">
+                <!-- Card com Nome da Emoção -->
+                <div class="emotion-title-card alegria-card">
+                    <h1 class="emotion-name">Alegria</h1>
+                </div>
+                
+                <!-- Flor Grande -->
+                <div class="emotion-flower-container">
+                    <img src="assets/img/alegria.png" alt="Flor da Alegria" class="emotion-flower-img">
+                </div>
+            </div>
+
+            <!-- Linha Divisória Vertical -->
+            <div class="vertical-divider"></div>
+
+            <!-- Lado Direito -->
+            <div class="emotion-right-section">
+                <!-- Primeira Seção de Texto -->
+                <div class="text-section">
+                    <h2 class="section-title">O que é a alegria?</h2>
+                    <p class="section-text">
+                        A alegria é causada por algo que nos dá prazer, e por isso, é um sentimento profundamente agradável.
+                    </p>
+                    <p class="section-text">
+                        Ao contrário da felicidade, a alegria é de curta duração. No entanto, uma pessoa pode ter muitíssimos momentos alegres durante o dia.
+                    </p>
+                </div>
+
+                <!-- Segunda Seção de Texto -->
+                <div class="text-section">
+                    <h2 class="section-title">O que acontece durante esses momentos?</h2>
+                    <p class="section-text">
+                        És invadido por um prazer divertido. A tua energia aumenta e a tua maneira de pensar torna-se mais positiva.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grama no fundo -->
+        <div class="grass-background">
+            <img src="assets/img/relva.png" alt="relva" class="grass">
+        </div>
+    </div>
+
+    <script src="js/emotion.js"></script>
+</body>
+</html>
