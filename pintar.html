@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pintar - The Sentimental Garden</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pintar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="pintar-page">
+    <div class="pintar-container">
+        <!-- Logo e Título no Canto Superior Esquerdo -->
+        <div class="top-left-branding">
+            <img src="assets/img/logo.svg" alt="Logo" class="logo-small">
+            <h2 class="page-subtitle">Vamos colorir as tuas emoções?</h2>
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div class="pintar-content">
+            <!-- Área de Pintura -->
+            <div class="pintar-area">
+                <!-- Paleta de Cores -->
+                <div class="color-palette">
+                    <div class="paint-mode-selector">
+                        <button class="mode-btn active" data-mode="fill" title="Preencher áreas (clique)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 51 52" fill="none">
+                                <path d="M21.3219 8.55316C19.6044 6.01441 17.8456 3.87316 16.2594 2.39191C15.4713 1.62119 14.5742 0.970489 13.5969 0.460656C12.7831 0.0706557 11.4969 -0.308094 10.2894 0.385656C8.91312 1.18441 8.68812 2.74816 8.67687 3.74566C8.66562 4.88566 8.91687 6.23566 9.32562 7.66066C10.0606 10.2369 11.4106 13.3907 13.2069 16.6682L0.921867 28.9532C-0.116883 29.9919 -0.0868833 31.4132 0.104367 32.3957C0.310617 33.4569 0.805617 34.6194 1.45437 35.7819C2.75937 38.1332 4.90437 40.8857 7.55187 43.5369C10.2031 46.1882 12.9556 48.3294 15.3069 49.6344C16.4694 50.2832 17.6319 50.7782 18.6931 50.9844C19.6756 51.1719 21.0931 51.2057 22.1356 50.1669L43.1919 29.1107C43.6344 30.0744 43.5369 31.0307 43.3794 32.6319C43.2669 33.7269 43.1244 35.1257 43.1056 37.0419V37.5032H43.1169C43.1955 38.4402 43.6232 39.3134 44.3153 39.9499C45.0075 40.5864 45.9134 40.9397 46.8537 40.9397C47.794 40.9397 48.7 40.5864 49.3921 39.9499C50.0843 39.3134 50.512 38.4402 50.5906 37.5032H50.6019V37.2894C50.6054 37.143 50.6004 36.9965 50.5869 36.8507C50.3806 32.1632 47.9619 26.5832 43.6119 23.7482C43.3811 23.1902 43.1169 22.6467 42.8206 22.1207C41.5119 19.7732 39.3706 17.0207 36.7194 14.3694C34.0681 11.7182 31.3156 9.57316 28.9644 8.26816C27.8019 7.62316 26.6394 7.12816 25.5781 6.91816C24.5956 6.73066 23.1781 6.70066 22.1356 7.73941L21.3219 8.55316ZM13.7019 5.12941C15.1306 6.46441 16.8669 8.58691 18.6181 11.2494L15.9781 13.8932C14.5456 11.1669 13.5031 8.63566 12.9294 6.62566C12.6784 5.80374 12.5138 4.95793 12.4381 4.10191C12.7806 4.32691 13.2019 4.66941 13.7019 5.12941ZM15.1794 19.9982C17.2044 23.1932 19.3306 25.8744 21.2056 27.6219C21.3859 27.7898 21.5974 27.9206 21.8282 28.0068C22.059 28.093 22.3045 28.1328 22.5507 28.1241C22.7968 28.1154 23.0389 28.0583 23.263 27.956C23.4872 27.8538 23.6889 27.7084 23.8569 27.5282C24.0248 27.3479 24.1556 27.1364 24.2417 26.9056C24.3279 26.6748 24.3678 26.4293 24.3591 26.1831C24.3504 25.9369 24.2933 25.6949 24.191 25.4707C24.0888 25.2466 23.9434 25.0448 23.7631 24.8769C22.0644 23.2944 19.9494 20.6169 17.8981 17.2757L21.9781 13.1957C22.1806 13.6482 22.4094 14.1044 22.6644 14.5644C23.9731 16.9157 26.1144 19.6682 28.7656 22.3194C31.4131 24.9707 34.1656 27.1119 36.5206 28.4169C36.9781 28.6744 37.4344 28.9032 37.8894 29.1032L19.6606 47.3357L19.4056 47.2982C18.8919 47.1969 18.1231 46.9082 17.1256 46.3532C15.1606 45.2582 12.6781 43.3532 10.2031 40.8782C7.72812 38.4032 5.82312 35.9282 4.72812 33.9557C4.17687 32.9619 3.88437 32.1932 3.78687 31.6794L3.74937 31.4244L15.1794 19.9982ZM25.9419 12.7419C25.5523 12.082 25.2486 11.375 25.0381 10.6382C25.5444 10.7619 26.2531 11.0507 27.1456 11.5419C29.1106 12.6369 31.5931 14.5419 34.0681 17.0169C35.7556 18.7044 37.1806 20.3957 38.2606 21.9294C36.9185 21.8376 35.5703 21.9527 34.2631 22.2707C33.273 21.4481 32.322 20.5796 31.4131 19.6682C28.9381 17.1932 27.0369 14.7107 25.9456 12.7419H25.9419Z" fill="#6D6D6D"/>
+                            </svg>
+                        </button>
+                        <button class="mode-btn" data-mode="brush" title="Pincel livre (arrastar)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 55 53" fill="none">
+                                <path d="M22.325 36.5601C21.671 34.9477 20.4767 33.6129 18.9467 32.7843C17.4167 31.9557 15.6462 31.6848 13.9384 32.0181C12.2307 32.3513 10.6919 33.268 9.58576 34.6111C8.47958 35.9542 7.8748 37.6401 7.875 39.3801C7.875 40.1503 7.7168 40.9124 7.4102 41.619C7.1036 42.3257 6.65514 42.9618 6.09261 43.488C5.53008 44.0142 4.86547 44.4193 4.13998 44.6781C3.41448 44.9369 2.64356 45.0439 1.875 44.9926C3.11112 47.14 5.02158 48.8192 7.30981 49.7696C9.59803 50.72 12.136 50.8884 14.5297 50.2486C16.9235 49.6089 19.039 48.1968 20.548 46.2315C22.057 44.2663 22.875 41.8578 22.875 39.3801C22.875 38.3826 22.68 37.4301 22.325 36.5601ZM22.325 36.5601C25.2975 35.5472 28.1404 34.1879 30.795 32.5101M18.1875 32.4476C19.2007 29.4688 20.5617 26.6199 22.2425 23.9601M30.7925 32.5101C35.5331 29.5144 39.5909 25.5554 42.7025 20.8901L52.3925 6.35507C52.7637 5.80147 52.9312 5.13618 52.8664 4.4728C52.8016 3.80943 52.5086 3.18911 52.0373 2.7178C51.566 2.24649 50.9456 1.95342 50.2823 1.88863C49.6189 1.82384 48.9536 1.99136 48.4 2.36257L33.865 12.0551C29.1987 15.1664 25.2389 19.2242 22.2425 23.9651C26.0467 25.667 29.0905 28.7109 30.7925 32.5151" stroke="#6D6D6D" stroke-width="3.75" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="color-buttons">
+                        <button class="color-btn" data-color="#FEF0CB" style="background-color: #FEF0CB;"></button>
+                        <button class="color-btn" data-color="#DDF0FF" style="background-color: #DDF0FF;"></button>
+                        <button class="color-btn" data-color="#EBE2FF" style="background-color: #EBE2FF;"></button>
+                        <button class="color-btn" data-color="#FFE2DF" style="background-color: #FFE2DF;"></button>
+                        <button class="color-btn" data-color="#FFE4F7" style="background-color: #FFE4F7;"></button>
+                        <button class="color-btn" data-color="#D6F2DA" style="background-color: #D6F2DA;"></button>
+                    </div>
+                </div>
+
+                <!-- Canvas de Pintura -->
+                <div class="canvas-wrapper">
+                    <button class="eraser-btn" title="Modo Borracha">
+                        <img src="assets/icons/apagar.png" alt="Borracha" class="eraser-icon">
+                    </button>
+                    
+                    <div class="canvas-container">
+                        <canvas id="flower-canvas" width="500" height="600"></canvas>
+                        <img id="flower-img" class="flower-image" src="assets/img/flor1.png" alt="Flor para pintar" style="display: none;">
+                    </div>
+                </div>
+
+                <!-- Seção Direita -->
+                <div class="right-section">
+                    <!-- Nome da Flor -->
+                    <div class="name-section">
+                        <label for="flower-name" class="name-label">Dá nome à tua flor:</label>
+                        <input type="text" id="flower-name" class="name-input" placeholder="Ex: Flor da Alegria" maxlength="30">
+                    </div>
+
+                    <!-- Escolha do Tipo de Flor -->
+                    <div class="flower-type-section">
+                        <label class="type-label">Escolhe a flor que queres colorir:</label>
+                        <div class="flower-types">
+                            <button class="flower-type-btn active" data-type="1" data-image="assets/img/flor1.png">
+                                <img src="assets/img/flor1.png" alt="Flor 1">
+                            </button>
+                            <button class="flower-type-btn" data-type="2" data-image="assets/img/flor2.png">
+                                <img src="assets/img/flor2.png" alt="Flor 2">
+                            </button>
+                            <button class="flower-type-btn" data-type="3" data-image="assets/img/flor3.png">
+                                <img src="assets/img/flor3.png" alt="Flor 3">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Botão Enviar -->
+                    <button class="send-button">
+                        <span>Vamos dar vida à tua flor emocional</span>
+                        <svg width="30" height="30" viewBox="0 0 30 30">
+                            <circle cx="15" cy="15" r="14" fill="#4CAF50"/>
+                            <path d="M10 15 L20 15 M15 10 L20 15 L15 20" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grama -->
+        <div class="grass-background">
+            <img src="assets/img/relva.png" alt="relva" class="grass">
+        </div>
+    </div>
+
+    <script src="js/pintar.js"></script>
+</body>
+</html>
