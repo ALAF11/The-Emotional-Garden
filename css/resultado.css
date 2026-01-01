@@ -1,0 +1,445 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.resultado-page {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #e7f6c3;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.resultado-container {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.top-left-branding {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 10;
+    animation: slideInLeft 0.6s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.logo-small {
+    width: 60px;
+    height: 60px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+}
+
+.page-subtitle {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    color: #000;
+    margin: 0;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.resultado-content {
+    flex: 1;
+    padding: 115px 60px 130px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.resultado-area {
+    width: 100%;
+}
+
+
+.two-column-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.flower-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    border: 4px solid #80BB9D;
+    animation: slideInLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.flower-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f8fff0 0%, #ffffff 100%);
+    border-radius: 15px;
+    padding: 15px;
+    position: relative;
+    overflow: hidden;
+    min-height: 480px;
+}
+
+.flower-display::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(130, 201, 30, 0.05) 0%, transparent 70%);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+#result-canvas {
+    max-width: 100%;
+    max-height: 550px;
+    height: auto;
+    border-radius: 15px;
+    position: relative;
+    z-index: 1;
+    animation: floatFlower 4s ease-in-out infinite;
+}
+
+@keyframes floatFlower {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+.info-card {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    border: 4px solid #82C91E;
+    animation: slideInRight 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.flower-name-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #e7f6c3 0%, #d6f2da 100%);
+    border-radius: 14px;
+    border: 2px solid #82C91E;
+}
+
+.flower-name-display svg {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.flower-name-display span {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2d5016;
+}
+
+.flower-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Botões de Ação */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-primary,
+.btn-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 17px 28px;
+    border: none;
+    border-radius: 14px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    width: 100%;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #82C91E 0%, #4CAF50 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0px 8px 20px rgba(76, 175, 80, 0.4);
+    background: linear-gradient(135deg, #94D82D 0%, #5BC05F 100%);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px) scale(1);
+}
+
+.btn-secondary {
+    background: white;
+    color: #666;
+    border: 3px solid #ddd;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    border-color: #82C91E;
+    color: #82C91E;
+}
+
+.btn-secondary:active {
+    transform: translateY(-1px);
+}
+
+/* Grama */
+.grass-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 140px;
+    line-height: 0;
+    pointer-events: none;
+}
+
+.grass {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+}
+
+/* Responsividade - Tablet */
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+    .top-left-branding {
+        top: 20px;
+        left: 25px;
+    }
+    
+    .logo-small {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .page-subtitle {
+        font-size: 24px;
+    }
+    
+    .resultado-content {
+        padding: 20px 25px 70px;
+        max-width: 1000px;
+    }
+    
+    .two-column-layout {
+        gap: 20px;
+    }
+    
+    .flower-card,
+    .info-card {
+        padding: 25px;
+    }
+    
+    .flower-display {
+        min-height: 380px;
+        padding: 12px;
+    }
+    
+    #result-canvas {
+        max-height: 380px;
+    }
+    
+    .info-card {
+        gap: 20px;
+    }
+    
+    .flower-name-display {
+        padding: 12px 18px;
+    }
+    
+    .flower-name-display svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .flower-name-display span {
+        font-size: 20px;
+    }
+    
+    .flower-description {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    
+    .action-buttons {
+        gap: 10px;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        padding: 14px 20px;
+        font-size: 16px;
+        gap: 8px;
+    }
+    
+    .btn-primary svg,
+    .btn-secondary svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Responsividade - Mobile */
+@media screen and (max-width: 768px) {
+    .top-left-branding {
+        top: 20px;
+        left: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .logo-small {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .page-subtitle {
+        font-size: 20px;
+    }
+    
+    .resultado-content {
+        padding: 120px 20px 180px;
+    }
+    
+    .two-column-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .flower-card,
+    .info-card {
+        padding: 20px;
+    }
+    
+    .flower-display {
+        min-height: 350px;
+        padding: 20px;
+    }
+    
+    #result-canvas {
+        max-height: 320px;
+    }
+    
+    .flower-name-display {
+        padding: 12px 18px;
+    }
+    
+    .flower-name-display span {
+        font-size: 19px;
+    }
+    
+    .flower-description {
+        font-size: 15px;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+}

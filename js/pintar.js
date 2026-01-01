@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
         animateExit();
         
         setTimeout(() => {
-            window.location.href = 'plantar.html';
+            window.location.href = 'resultado.html';
         }, 1000);
     });
     

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado - The Sentimental Garden</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/resultado.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="resultado-page">
+    <div class="resultado-container">
+        <!-- Logo e Título no Canto Superior Esquerdo -->
+        <div class="top-left-branding">
+            <img src="assets/img/logo.svg" alt="Logo" class="logo-small">
+            <h2 class="page-subtitle">A tua flor emocional está linda!</h2>
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div class="resultado-content">
+            <div class="resultado-area">
+                <!-- Layout de Duas Colunas -->
+                <div class="two-column-layout">
+                    <!-- Coluna Esquerda - Flor -->
+                    <div class="flower-card">
+                        <div class="flower-display">
+                            <canvas id="result-canvas"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Coluna Direita - Informações e Botões -->
+                    <div class="info-card">
+                        <div class="flower-name-display">
+                            <span id="display-name">Flor da Alegria</span>
+                        </div>
+                        
+                        <p class="flower-description">
+                            Parabéns! Criaste uma flor única que representa as tuas emoções. 
+                            Agora vamos plantá-la no teu jardim emocional!
+                        </p>
+
+                        <div class="action-buttons">
+                            <button class="btn-secondary" onclick="window.history.back()">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                                </svg>
+                                <span>Voltar a Pintar</span>
+                            </button>
+                            
+                            <button class="btn-primary" id="plant-button">
+                                <span>Plantar no Jardim</span>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M8 12h8m-4-4v8"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grama -->
+        <div class="grass-background">
+            <img src="assets/img/relva.png" alt="relva" class="grass">
+        </div>
+    </div>
+
+    <script src="js/resultado.js"></script>
+</body>
+</html>
