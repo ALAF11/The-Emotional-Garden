@@ -44,6 +44,39 @@ body.pintar-page {
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Botão Histórico no Canto Superior Direito */
+.top-right-actions {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    z-index: 10;
+}
+
+.history-button {
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #e7f6c3 0%, #d6f2da 100%);
+    border: 3px solid #82C91E;
+    border-radius: 14px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2d5016;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.history-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 12px rgba(130, 201, 30, 0.3);
+    background: linear-gradient(135deg, #d6f2da 0%, #c5e8b7 100%);
+    border-color: #4CAF50;
+}
+
+.history-button:active {
+    transform: translateY(-1px);
+}
+
 .pintar-content {
     flex: 1;
     padding: 100px 60px 120px;

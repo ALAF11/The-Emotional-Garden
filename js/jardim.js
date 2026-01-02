@@ -1,6 +1,3 @@
-// Script para página do jardim - The Sentimental Garden
-// Mostra as flores emocionais pré-definidas crescendo no jardim
-
 document.addEventListener('DOMContentLoaded', function() {
     const flowersGarden = document.getElementById('flowers-garden');
     

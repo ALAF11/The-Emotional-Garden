@@ -1,3 +1,6 @@
+// Script para página de pintura - The Sentimental Garden
+// Sistema de pintura com Flood Fill (colorir por áreas) e Pincel Livre
+
 document.addEventListener('DOMContentLoaded', function() {
     // Elementos
     const colorButtons = document.querySelectorAll('.color-btn');
@@ -107,21 +110,37 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Botão Enviar
     sendButton.addEventListener('click', function() {
-        const flowerName = flowerNameInput.value.trim();
-        
-        if (flowerName === '') {
-            flowerNameInput.style.borderColor = '#ff6b6b';
-            flowerNameInput.placeholder = 'Por favor, dá um nome à tua flor!';
-            setTimeout(() => { flowerNameInput.style.borderColor = '#80BB9D'; }, 2000);
-            return;
+        try {
+            console.log('🖱️ Botão clicado!');
+            
+            const flowerName = flowerNameInput.value.trim();
+            console.log('📝 Nome da flor:', flowerName);
+            
+            if (flowerName === '') {
+                console.log('⚠️ Nome vazio - mostrando aviso');
+                flowerNameInput.style.borderColor = '#ff6b6b';
+                flowerNameInput.placeholder = 'Por favor, dá um nome à tua flor!';
+                setTimeout(() => { flowerNameInput.style.borderColor = '#80BB9D'; }, 2000);
+                return;
+            }
+            
+            console.log('💾 Guardando flor...', { name: flowerName, type: currentFlowerType });
+            saveFlowerData(flowerName, currentFlowerType);
+            
+            console.log('🎬 Iniciando animação de saída...');
+            animateExit();
+            
+            console.log('⏱️ Aguardando 1 segundo antes de redirecionar...');
+            setTimeout(() => {
+                console.log('🔄 Redirecionando para resultado.html...');
+                window.location.href = 'resultado.html';
+            }, 1000);
+            
+        } catch (error) {
+            console.error('❌ ERRO no botão enviar:', error);
+            console.error('Stack:', error.stack);
+            alert('Erro ao processar: ' + error.message);
         }
-        
-        saveFlowerData(flowerName, currentFlowerType);
-        animateExit();
-        
-        setTimeout(() => {
-            window.location.href = 'resultado.html';
-        }, 1000);
     });
     
     flowerNameInput.addEventListener('input', function() {
@@ -130,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // === FUNÇÕES DE PINTURA ===
     
     function setupCanvas() {
         canvas.width = 500;
@@ -299,14 +319,18 @@ document.addEventListener('DOMContentLoaded', function() {
         lastY = pos.y;
     }
     
+    // === FUNÇÕES DE APAGAR ===
     
     function erase(x, y) {
         if (!baseImage) return;
         
+        // Redesenhar a imagem base apenas na área da borracha
         const size = eraserSize;
         
+        // Salvar estado atual
         const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
         
+        // Limpar área circular
         ctx.save();
         ctx.globalCompositeOperation = 'destination-out';
         ctx.beginPath();
@@ -314,7 +338,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ctx.fill();
         ctx.restore();
         
-        
+        // Redesenhar apenas a parte da imagem original nessa área
         ctx.save();
         ctx.globalCompositeOperation = 'destination-over';
         
@@ -343,7 +367,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    
+    // === FLOOD FILL (Preencher Área) ===
     
     function floodFill(startX, startY, fillColor) {
         const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -424,7 +448,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-
+// === FUNÇÕES AUXILIARES ===
 
 function animateEntrance() {
     const elements = [
@@ -458,17 +482,162 @@ function animateExit() {
 }
 
 function saveFlowerData(name, type) {
-    const canvas = document.getElementById('flower-canvas');
+    try {
+        console.log('🎨 Iniciando saveFlowerData...', { name, type });
+        
+        const canvas = document.getElementById('flower-canvas');
+        console.log('✓ Canvas encontrado:', canvas);
+        
+        const ctx = canvas.getContext('2d');
+        console.log('✓ Context obtido:', ctx);
+        
+        // Analisar uso de cores
+        console.log('🔍 Analisando cores...');
+        const colorUsage = analyzeColorUsage(ctx, canvas);
+        console.log('✓ Cores analisadas:', colorUsage);
+        
+        const flowerData = {
+            name: name,
+            type: type,
+            image: canvas.toDataURL('image/png'),
+            timestamp: new Date().toISOString(),
+            colorUsage: colorUsage
+        };
+        
+        console.log('💾 Salvando flor atual...');
+        // Salvar flor atual
+        localStorage.setItem('currentFlower', JSON.stringify(flowerData));
+        console.log('✓ Flor atual salva');
+        
+        // Adicionar ao histórico
+        console.log('📝 Adicionando ao histórico...');
+        addToHistory(flowerData);
+        console.log('✓ Adicionado ao histórico');
+        
+        console.log('✅ Flor guardada com sucesso!', flowerData);
+        
+    } catch (error) {
+        console.error('❌ ERRO em saveFlowerData:', error);
+        console.error('Stack:', error.stack);
+        alert('Erro ao guardar flor: ' + error.message);
+    }
+}
+
+function analyzeColorUsage(ctx, canvas) {
+    try {
+        console.log('🎨 Analisando cores do canvas...', { width: canvas.width, height: canvas.height });
+        
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const pixels = imageData.data;
+        
+        console.log(`📊 Total de pixels: ${pixels.length / 4}`);
+        
+        // Cores da paleta
+        const paletteColors = {
+            '#FEF0CB': 0,
+            '#DDF0FF': 0,
+            '#EBE2FF': 0,
+            '#FFE2DF': 0,
+            '#FFE4F7': 0,
+            '#D6F2DA': 0
+        };
+        
+        let totalColoredPixels = 0;
+        
+        // Contar pixels de cada cor
+        for (let i = 0; i < pixels.length; i += 4) {
+            const r = pixels[i];
+            const g = pixels[i + 1];
+            const b = pixels[i + 2];
+            const a = pixels[i + 3];
+            
+            // Ignorar pixels transparentes e brancos/pretos
+            if (a < 128 || (r > 240 && g > 240 && b > 240) || (r < 20 && g < 20 && b < 20)) {
+                continue;
+            }
+            
+            const hex = rgbToHex(r, g, b);
+            
+            // Verificar se é uma cor da paleta (com tolerância)
+            for (const color in paletteColors) {
+                if (isColorSimilar(hex, color, 30)) {
+                    paletteColors[color]++;
+                    totalColoredPixels++;
+                    break;
+                }
+            }
+        }
+        
+        console.log('🎨 Cores contadas:', paletteColors);
+        console.log('📊 Total pixels coloridos:', totalColoredPixels);
+        
+        // Calcular percentagens
+        const percentages = {};
+        for (const color in paletteColors) {
+            if (totalColoredPixels > 0) {
+                percentages[color] = Math.round((paletteColors[color] / totalColoredPixels) * 100);
+            } else {
+                percentages[color] = 0;
+            }
+        }
+        
+        console.log('📈 Percentagens:', percentages);
+        return percentages;
+        
+    } catch (error) {
+        console.error('❌ ERRO em analyzeColorUsage:', error);
+        console.error('Stack:', error.stack);
+        // Retornar objeto vazio em caso de erro
+        return {
+            '#FEF0CB': 0,
+            '#DDF0FF': 0,
+            '#EBE2FF': 0,
+            '#FFE2DF': 0,
+            '#FFE4F7': 0,
+            '#D6F2DA': 0
+        };
+    }
+}
+
+function rgbToHex(r, g, b) {
+    return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
+}
+
+function isColorSimilar(hex1, hex2, threshold) {
+    const rgb1 = hexToRgb(hex1);
+    const rgb2 = hexToRgb(hex2);
     
-    const flowerData = {
-        name: name,
-        type: type,
-        image: canvas.toDataURL('image/png'),
-        timestamp: new Date().toISOString()
-    };
-    
-    localStorage.setItem('currentFlower', JSON.stringify(flowerData));
-    console.log('Flor guardada:', flowerData);
+    return Math.abs(rgb1.r - rgb2.r) <= threshold &&
+           Math.abs(rgb1.g - rgb2.g) <= threshold &&
+           Math.abs(rgb1.b - rgb2.b) <= threshold;
+}
+
+function addToHistory(flowerData) {
+    try {
+        // Obter histórico existente
+        let history = JSON.parse(localStorage.getItem('flowersHistory')) || [];
+        
+        // Adicionar nova entrada com data atual
+        history.push({
+            name: flowerData.name,
+            type: flowerData.type,
+            image: flowerData.image,
+            date: new Date().toISOString(),
+            colorUsage: flowerData.colorUsage
+        });
+        
+        // Limitar histórico a 100 flores
+        if (history.length > 100) {
+            history = history.slice(-100);
+        }
+        
+        // Salvar histórico atualizado
+        localStorage.setItem('flowersHistory', JSON.stringify(history));
+        console.log('Flor adicionada ao histórico');
+        
+    } catch (error) {
+        console.error('Erro ao adicionar ao histórico:', error);
+    }
 }
 
 function playSound(type) {
@@ -501,10 +670,11 @@ function playSound(type) {
         oscillator.start(audioContext.currentTime);
         oscillator.stop(audioContext.currentTime + 0.2);
     } catch(e) {
-        
+        // Silencioso
     }
 }
 
+// Atalhos de teclado
 document.addEventListener('keydown', function(e) {
     if (e.key >= '1' && e.key <= '6') {
         const index = parseInt(e.key) - 1;

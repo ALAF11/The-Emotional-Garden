@@ -1,0 +1,423 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.historico-page {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #e7f6c3;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.historico-container {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-left-branding {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 10;
+    animation: slideInLeft 0.6s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.logo-small {
+    width: 60px;
+    height: 60px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+}
+
+.page-subtitle {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    color: #000;
+    margin: 0;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Conteúdo Principal */
+.historico-content {
+    flex: 1;
+    padding: 120px 60px 160px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.month-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.month-nav-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #82C91E;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2d5016;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.month-nav-btn:hover {
+    background: #82C91E;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0px 4px 8px rgba(130, 201, 30, 0.3);
+}
+
+.month-nav-btn:active {
+    transform: scale(1.05);
+}
+
+.current-month {
+    font-size: 28px;
+    font-weight: 600;
+    color: #2d5016;
+    min-width: 150px;
+    text-align: center;
+    background: linear-gradient(135deg, #e7f6c3 0%, #d6f2da 100%);
+    padding: 12px 30px;
+    border-radius: 16px;
+    border: 3px solid #82C91E;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flowers-history-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.flower-history-card {
+    background: linear-gradient(135deg, #e7f6c3 0%, #d6f2da 100%);
+    border: 3px solid #82C91E;
+    border-radius: 16px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+    animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    position: relative;
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.flower-history-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(130, 201, 30, 0.3);
+    border-color: #4CAF50;
+}
+
+.flower-history-image {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.15));
+}
+
+.flower-history-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.flower-date {
+    font-size: 36px;
+    font-weight: 700;
+    color: #2d5016;
+    line-height: 1;
+}
+
+.emotion-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 2px;
+}
+
+.emotion-display {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.emotion-icon {
+    width: 32px;
+    height: 32px;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+.emotion-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d5016;
+}
+
+.delete-flower-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #ff6b6b;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.flower-history-card:hover .delete-flower-btn {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.delete-flower-btn:hover {
+    background: #ff6b6b;
+    transform: scale(1.1);
+}
+
+.delete-flower-btn svg {
+    width: 16px;
+    height: 16px;
+    stroke: #ff6b6b;
+    transition: stroke 0.3s ease;
+}
+
+.delete-flower-btn:hover svg {
+    stroke: white;
+}
+
+/* Mensagem quando não há flores */
+.no-flowers-message {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #666;
+}
+
+.grass-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 140px;
+    line-height: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.grass {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+}
+
+/* Responsividade - Tablet */
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+    .top-left-branding {
+        top: 25px;
+        left: 30px;
+    }
+    
+    .logo-small {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .page-subtitle {
+        font-size: 28px;
+    }
+    
+    .historico-content {
+        padding: 100px 40px 140px;
+    }
+    
+    .flowers-history-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 18px;
+    }
+    
+    .flower-history-card {
+        padding: 16px;
+        gap: 12px;
+    }
+    
+    .flower-history-image {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .flower-date {
+        font-size: 32px;
+    }
+    
+    .emotion-icon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .delete-flower-btn {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .delete-flower-btn svg {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .current-month {
+        font-size: 26px;
+        padding: 10px 25px;
+    }
+    
+    .month-nav-btn {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Responsividade - Mobile */
+@media screen and (max-width: 768px) {
+    .top-left-branding {
+        top: 20px;
+        left: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .logo-small {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .page-subtitle {
+        font-size: 22px;
+    }
+    
+    .historico-content {
+        padding: 120px 20px 180px;
+    }
+    
+    .flowers-history-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .flower-history-card {
+        padding: 15px;
+        gap: 12px;
+    }
+    
+    .flower-history-image {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .flower-date {
+        font-size: 28px;
+    }
+    
+    .emotion-label {
+        font-size: 13px;
+    }
+    
+    .emotion-icon {
+        width: 26px;
+        height: 26px;
+    }
+    
+    .emotion-name {
+        font-size: 14px;
+    }
+    
+    .delete-flower-btn {
+        width: 28px;
+        height: 28px;
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+    .delete-flower-btn svg {
+        width: 13px;
+        height: 13px;
+    }
+    
+    .current-month {
+        font-size: 24px;
+        padding: 10px 20px;
+        min-width: 130px;
+    }
+    
+    .month-nav-btn {
+        width: 42px;
+        height: 42px;
+    }
+    
+    .no-flowers-message {
+        font-size: 20px;
+        padding: 40px 20px;
+    }
+}
