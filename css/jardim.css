@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.jardim-page {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #e7f6c3;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.jardim-container {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-left-branding {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 10;
+    animation: slideInLeft 0.6s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.logo-small {
+    width: 60px;
+    height: 60px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+}
+
+.page-subtitle {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    color: #000;
+    margin: 0;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.jardim-content {
+    flex: 1;
+    position: relative;
+    padding: 120px 60px 160px;
+}
+
+.info-card-center {
+    background: linear-gradient(135deg, #e7f6c3 0%, #d6f2da 100%);
+    border: 3px solid #82C91E;
+    border-radius: 20px;
+    padding: 30px 50px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+    z-index: 5;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: scaleIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes scaleInCard {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.garden-message {
+    font-size: 22px;
+    font-weight: 600;
+    color: #2d5016;
+    text-align: center;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.flowers-garden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.flower-item {
+    position: absolute;
+    width: 140px;
+    height: auto;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.2));
+    animation: growFlower 1s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes growFlower {
+    from {
+        opacity: 0;
+        transform: scale(0) translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+/* Alegria - esquerda superior */
+.flower-item:nth-child(1) {
+    top: 15%;
+    left: 9%;
+    animation-delay: 0.2s;
+}
+
+/* Medo - esquerda inferior */
+.flower-item:nth-child(2) {
+    top: 50%;
+    left: 18%;
+    animation-delay: 0.4s;
+}
+
+/* Raiva - direita superior */
+.flower-item:nth-child(3) {
+    top: 15%;
+    right: 9%;
+    animation-delay: 0.6s;
+}
+
+/* Tristeza - direita inferior */
+.flower-item:nth-child(4) {
+    top: 50%;
+    right: 18%;
+    animation-delay: 0.8s;
+}
+
+/* Amor - centro do ecrã  */
+.flower-item:nth-child(5) {
+    top: 55%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    animation-delay: 1s;
+    filter: drop-shadow(0px 6px 12px rgba(255, 105, 180, 0.4));
+}
+
+
+.flower-item {
+    animation: growFlower 1s cubic-bezier(0.34, 1.56, 0.64, 1) both,
+               floatFlower 4s ease-in-out infinite;
+}
+
+@keyframes floatFlower {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+.flower-item:nth-child(odd) {
+    animation-delay: 0s, 0.5s;
+}
+
+.flower-item:nth-child(even) {
+    animation-delay: 0s, 1s;
+}
+
+
+.grass-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 140px;
+    line-height: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.grass {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+}
+
+/* Responsividade - Tablet */
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+    .top-left-branding {
+        top: 25px;
+        left: 30px;
+    }
+    
+    .logo-small {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .page-subtitle {
+        font-size: 28px;
+    }
+    
+    .jardim-content {
+        padding: 100px 40px 140px;
+    }
+    
+    .info-card-center {
+        padding: 25px 40px;
+        max-width: 550px;
+        top: 32%;
+    }
+    
+    .garden-message {
+        font-size: 20px;
+    }
+    
+    .flower-item {
+        width: 120px;
+    }
+    
+    /* Amor - flor central */
+    .flower-item:nth-child(5) {
+        width: 140px;
+    }
+}
+
+/* Responsividade - Mobile */
+@media screen and (max-width: 768px) {
+    .top-left-branding {
+        top: 20px;
+        left: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .logo-small {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .page-subtitle {
+        font-size: 22px;
+    }
+    
+    .jardim-content {
+        padding: 120px 20px 180px;
+    }
+    
+    .info-card-center {
+        padding: 20px 30px;
+        max-width: 90%;
+        top: 30%;
+    }
+    
+    .garden-message {
+        font-size: 18px;
+    }
+    
+    .flower-item {
+        width: 90px;
+    }
+    
+    /* Amor - flor central */
+    .flower-item:nth-child(5) {
+        width: 120px;
+    }
+    
+    /* Ajustar posições para mobile */
+    .flower-item:nth-child(1) {
+        top: 15%;
+        left: 5%;
+    }
+    
+    .flower-item:nth-child(2) {
+        top: 48%;
+        left: 7%;
+    }
+    
+    .flower-item:nth-child(3) {
+        top: 18%;
+        right: 5%;
+    }
+    
+    .flower-item:nth-child(4) {
+        top: 52%;
+        right: 5%;
+    }
+}
