@@ -55,7 +55,6 @@ body.plantar-page {
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
 .plantar-content {
     flex: 1;
     display: flex;
@@ -68,7 +67,7 @@ body.plantar-page {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+    gap: 40px;
     animation: fadeIn 0.8s ease-out;
 }
 
@@ -81,6 +80,7 @@ body.plantar-page {
     }
 }
 
+/* Semente */
 .seed-container {
     display: flex;
     justify-content: center;
@@ -130,19 +130,17 @@ body.plantar-page {
     }
 }
 
-.plant-button {
-    padding: 20px 40px;
-    background: linear-gradient(135deg, #e7f6c3 0%, #d6f2da 100%);
-    border: 3px solid #82C91E;
-    border-radius: 16px;
-    font-family: 'Quicksand', sans-serif;
+/* Texto Introdutório */
+.choice-intro {
     font-size: 20px;
     font-weight: 600;
     color: #2d5016;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
     animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.choice-intro.hidden {
+    animation: fadeOut 0.5s ease-out forwards;
 }
 
 @keyframes fadeInUp {
@@ -156,18 +154,16 @@ body.plantar-page {
     }
 }
 
-.plant-button:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0px 10px 25px rgba(130, 201, 30, 0.4);
-    background: linear-gradient(135deg, #d6f2da 0%, #c5e8b7 100%);
-    border-color: #4CAF50;
+/* Botões de Escolha */
+.choice-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeInUp 1s ease-out 0.5s both;
 }
 
-.plant-button:active {
-    transform: translateY(-2px) scale(1.02);
-}
-
-.plant-button.hidden {
+.choice-buttons.hidden {
     animation: fadeOut 0.5s ease-out forwards;
 }
 
@@ -182,6 +178,51 @@ body.plantar-page {
     }
 }
 
+/* Botão Plantar */
+.plant-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 20px 40px;
+    background: linear-gradient(135deg, #e7f6c3 0%, #d6f2da 100%);
+    border: 3px solid #82C91E;
+    border-radius: 16px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2d5016;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    min-width: 220px;
+}
+
+.plant-button span {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.plant-button small {
+    font-size: 13px;
+    font-weight: 500;
+    color: #5a8a3a;
+    opacity: 0.9;
+}
+
+.plant-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0px 10px 25px rgba(130, 201, 30, 0.4);
+    background: linear-gradient(135deg, #d6f2da 0%, #c5e8b7 100%);
+    border-color: #4CAF50;
+}
+
+.plant-button:active {
+    transform: translateY(-2px) scale(1.02);
+}
+
+/* Grama */
 .grass-background {
     position: absolute;
     bottom: 0;
@@ -221,16 +262,32 @@ body.plantar-page {
     }
     
     .plantar-area {
-        gap: 40px;
+        gap: 35px;
     }
     
     .seed-image {
         width: 220px;
     }
     
+    .choice-intro {
+        font-size: 19px;
+    }
+    
+    .choice-buttons {
+        gap: 15px;
+    }
+    
     .plant-button {
         padding: 18px 35px;
-        font-size: 19px;
+        min-width: 200px;
+    }
+    
+    .plant-button span {
+        font-size: 17px;
+    }
+    
+    .plant-button small {
+        font-size: 12px;
     }
 }
 
@@ -258,15 +315,35 @@ body.plantar-page {
     }
     
     .plantar-area {
-        gap: 35px;
+        gap: 30px;
     }
     
     .seed-image {
         width: 180px;
     }
     
+    .choice-intro {
+        font-size: 18px;
+    }
+    
+    .choice-buttons {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        align-items: center;
+    }
+    
     .plant-button {
         padding: 16px 30px;
-        font-size: 18px;
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .plant-button span {
+        font-size: 16px;
+    }
+    
+    .plant-button small {
+        font-size: 12px;
     }
 }
