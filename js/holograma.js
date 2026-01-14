@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnNovaFlor = document.getElementById('btn-nova-flor');
     const btnFullscreen = document.getElementById('btn-fullscreen');
     const canvasIds = ['flower-top', 'flower-right', 'flower-bottom', 'flower-left'];
-    const rotations = [180, 270, 0, 90]; // Rotações para cada posição do Pepper's Ghost
+    const rotations = [0, 90, 180, 270]; // Rotações para cada posição do Pepper's Ghost
     
     // Carregar dados da flor do localStorage
     loadFlowerData();

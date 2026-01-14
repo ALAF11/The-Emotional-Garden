@@ -34,11 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
         playCelebrationSound();
     }, 1500);
     
-    // Redirecionar para animação Pepper's Ghost após 3 segundos
-    setTimeout(() => {
-        window.location.href = 'peppers-ghost.html';
-    }, 3000);
-    
     function playCelebrationSound() {
         try {
             const audioContext = new (window.AudioContext || window.webkitAudioContext)();

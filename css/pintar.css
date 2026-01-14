@@ -44,15 +44,17 @@ body.pintar-page {
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Botão Histórico no Canto Superior Direito */
 .top-right-actions {
     position: absolute;
     top: 30px;
     right: 40px;
     z-index: 10;
+    display: flex;
+    gap: 12px;
 }
 
-.history-button {
+.history-button,
+.action-button {
     padding: 12px 28px;
     background: linear-gradient(135deg, #e7f6c3 0%, #d6f2da 100%);
     border: 3px solid #82C91E;
@@ -66,14 +68,16 @@ body.pintar-page {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.history-button:hover {
+.history-button:hover,
+.action-button:hover {
     transform: translateY(-3px);
     box-shadow: 0px 6px 12px rgba(130, 201, 30, 0.3);
     background: linear-gradient(135deg, #d6f2da 0%, #c5e8b7 100%);
     border-color: #4CAF50;
 }
 
-.history-button:active {
+.history-button:active,
+.action-button:active {
     transform: translateY(-1px);
 }
 

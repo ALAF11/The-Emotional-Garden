@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holograma 3D - The Sentimental Garden</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/holograma3D.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/img/android-chrome-512x512.png">
+    
+</head>
+<body class="holograma-page">
+    <div class="holograma-container">
+        <!-- Logo e Título no Canto Superior Esquerdo -->
+        <div class="top-left-branding">
+            <a href="index.html" alt="Logo">
+                <img src="assets/img/logo.svg" alt="Logo" class="logo-small">
+            </a>
+            <h2 class="page-subtitle">Holograma 3D</h2>
+        </div>
+
+        <!-- Conteúdo Principal - Layout de Duas Colunas -->
+        <div class="holograma-content">
+            <!-- Coluna Esquerda - Área do Holograma com 4 GIFs -->
+            <div class="holograma-display">
+                <div class="pepper-ghost-container">
+                    <!-- 4 GIFs posicionados como Pepper's Ghost -->
+                    <div class="gif-projection top">
+                        <img src="assets/gif/flower.gif" alt="Flor 3D" class="flower-gif">
+                    </div>
+                    <div class="gif-projection right">
+                        <img src="assets/gif/flower.gif" alt="Flor 3D" class="flower-gif">
+                    </div>
+                    <div class="gif-projection bottom">
+                        <img src="assets/gif/flower.gif" alt="Flor 3D" class="flower-gif">
+                    </div>
+                    <div class="gif-projection left">
+                        <img src="assets/gif/flower.gif" alt="Flor 3D" class="flower-gif">
+                    </div>
+                    
+                    <!-- Indicador Central -->
+                    <div class="center-indicator">
+                        <div class="pyramid-guide">
+                            <svg viewBox="0 0 100 100" fill="none">
+                                <polygon points="50,10 90,90 10,90" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-dasharray="5,5"/>
+                                <circle cx="50" cy="50" r="5" fill="rgba(255,255,255,0.5)"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna Direita - Informações -->
+            <div class="info-panel">
+                <!-- Nome da Flor -->
+                <div class="flower-name-display">
+                    <span class="flower-emoji">🌸</span>
+                    <span id="flower-name-text">A nossa flor 3D</span>
+                </div>
+
+                <!-- Instruções -->
+                <div class="instructions-panel">
+                    <h3 class="instructions-title">Como ver o holograma:</h3>
+                    
+                    <div class="instruction-card">
+                        <div class="instruction-icon">
+                            <span>1</span>
+                        </div>
+                        <p class="instruction-text">Coloca o tablet numa superfície plana</p>
+                    </div>
+                    
+                    <div class="instruction-card">
+                        <div class="instruction-icon">
+                            <span>2</span>
+                        </div>
+                        <p class="instruction-text">Posiciona a pirâmide de acrílico no centro</p>
+                    </div>
+                    
+                    <div class="instruction-card">
+                        <div class="instruction-icon">
+                            <span>3</span>
+                        </div>
+                        <p class="instruction-text">Observa a flor 3D a aparecer em holograma!</p>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn-fullscreen" id="btn-fullscreen">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+                        </svg>
+                        <span>Ecrã Completo</span>
+                    </button>
+                    
+                    <button class="btn-primary" id="btn-voltar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        </svg>
+                        <span>Voltar à Pintura</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer-copyright light">
+            Copyright © 2026 The Emotional Garden | All Rights Reserved
+        </footer>
+
+    </div>
+
+    <script src="js/holograma3D.js"></script>
+</body>
+</html>
