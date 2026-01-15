@@ -15,7 +15,7 @@
 
 ## Sobre o Projeto
 
-**The Sentimental Garden** é uma aplicação web educacional interativa desenvolvida para crianças entre 5 e 8 anos, com o objetivo de ensinar inteligência emocional através de uma experiência lúdica e visual.
+**The Emotional Garden** é uma aplicação web educacional interativa desenvolvida para crianças entre 5 e 8 anos, com o objetivo de ensinar inteligência emocional através de uma experiência lúdica e visual.
 
 O projeto combina:
 - **Educação Emocional**: Ensina 6 emoções básicas (Alegria, Tristeza, Medo, Raiva, Amor, Calma)
@@ -173,7 +173,7 @@ Copyright © 2026 The Emotional Garden | All Rights Reserved
 
 ## Orientação
 
-- Professora Mara Dionisio pela orientação
+- Professora: Mara Dionisio
 - Inspirações: "Inside Out" (Pixar), "O Monstro das Cores", "Emocionário"
 
 ---
