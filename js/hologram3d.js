@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Configuração dos GIFs
     const INTRO_GIF = 'assets/gif/flower1.gif';  // GIF de introdução (toca 1 vez)
     const IDLE_GIF = 'assets/gif/idle1.gif';     // GIF idle (loop infinito)
-    const INTRO_DURATION = 5000;                 // Duração do GIF de intro em ms (ajustar conforme necessário)
+    const INTRO_DURATION = 6000;                 // Duração do GIF de intro em ms (ajustar conforme necessário)
     
     // Inicializar sistema de GIFs
     initGifSequence();
@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        console.log('🌸 Iniciando sequência de GIFs...');
-        console.log(`📍 GIF Intro: ${INTRO_GIF}`);
-        console.log(`📍 GIF Idle: ${IDLE_GIF}`);
+        console.log('Iniciando sequência de GIFs...');
+        console.log(`GIF Intro: ${INTRO_GIF}`);
+        console.log(`GIF Idle: ${IDLE_GIF}`);
         
         // Definir o GIF de intro inicialmente (com timestamp para forçar reload)
         const timestamp = new Date().getTime();
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Função para mudar para o GIF idle
     function switchToIdleGif(flowerGifs) {
-        console.log('🔄 Mudando para GIF idle...');
+        console.log('Mudando para GIF idle...');
         
         flowerGifs.forEach((gif, index) => {
             // Adicionar classe de transição
@@ -78,8 +78,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 100);
         });
         
-        // Tocar som de transição (opcional)
-        playTransitionSound();
     }
     
     // Som de transição suave
@@ -184,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Pressionar 'R' para reiniciar a sequência de GIFs (útil para testes)
         if (e.key === 'r' || e.key === 'R') {
-            console.log('🔄 Reiniciando sequência de GIFs...');
+            console.log('Reiniciando sequência de GIFs...');
             initGifSequence();
         }
     });
