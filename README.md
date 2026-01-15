@@ -120,7 +120,7 @@ SVG            - Ícones e logótipo vetoriais
 ```
 ---
 
-## 🎨 Paleta de Cores e Emoções
+## Paleta de Cores e Emoções
 
 | Cor | Código Hex | Emoção | Flor Associada |
 |-----|------------|--------|----------------|
@@ -133,7 +133,7 @@ SVG            - Ícones e logótipo vetoriais
 
 ---
 
-## ⌨️ Atalhos de Teclado
+## Atalhos de Teclado
 
 | Tecla | Ação |
 |-------|------|
@@ -147,7 +147,7 @@ SVG            - Ícones e logótipo vetoriais
 
 ---
 
-## 👥 Equipa
+## Equipa
 
 | Nome | Função |
 |------|--------|
